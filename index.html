@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>阿嬤的五十音學習</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&family=Noto+Sans+TC:wght@400;700;900&display=swap');
 
 :root {
 –bg: #FDF5F2;
@@ -47,59 +48,65 @@ body.kata {
 - { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
 body {
-font-family: ‘Hiragino Sans’, ‘Hiragino Kaku Gothic ProN’, ‘Yu Gothic’, ‘Microsoft JhengHei’, sans-serif;
-background: var(–bg);
-color: var(–text);
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+background: #FDF5F2;
+color: #3A2820;
 min-height: 100vh;
 transition: background 0.4s;
 }
 
 /* ===== HEADER ===== */
 .header {
-background: var(–main);
-padding: 14px 18px 12px;
+background: #B5735A;
+padding: 12px 14px 10px;
 display: flex; align-items: center; justify-content: space-between;
 position: sticky; top: 0; z-index: 100;
 box-shadow: 0 4px 0 rgba(0,0,0,0.08);
-transition: background 0.4s;
 }
-.header-left { display: flex; align-items: center; gap: 10px; }
-.header-icon { font-size: 36px; line-height: 1; }
+.header-left { display: flex; align-items: center; gap: 8px; }
+.header-icon { font-size: 28px; line-height: 1; }
 .header-title {
-font-size: 26px;
-font-size: 26px; font-weight: 900; color: white;
-letter-spacing: 2px; text-shadow: 1px 2px 0 rgba(0,0,0,0.12);
+font-size: 20px; font-weight: 900; color: white;
+letter-spacing: 1px; text-shadow: 1px 2px 0 rgba(0,0,0,0.12);
+white-space: nowrap;
 }
 .header-greeting {
-font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.82);
-margin-top: 2px;
+font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.82);
+margin-top: 2px; white-space: nowrap; overflow: hidden;
+text-overflow: ellipsis; max-width: 180px;
 }
 .bottom-bar {
-background: white; border-top: 2px solid var(–border);
+background: white; border-top: 2px solid #EDD6CC;
 padding: 20px;
 display: flex; justify-content: center;
 }
 .yt-btn {
 display: flex; align-items: center; justify-content: center; gap: 8px;
-background: var(–main); color: white;
+background: #B5735A; color: white;
 border-radius: 50px; padding: 14px 32px;
 font-size: 19px; font-weight: 900;
 text-decoration: none;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 4px 16px var(–main-shadow);
 transition: all 0.15s; width: 100%; max-width: 420px;
 }
 .yt-btn:active { transform: scale(0.97); }
+.kana-switch { display: flex; gap: 6px; }
 .kana-btn {
-padding: 12px 20px; border-radius: 50px;
-border: 2.5px solid rgba(255,255,255,0.7);
-font-size: 18px; font-weight: 900; cursor: pointer;
+padding: 8px 12px; border-radius: 50px;
+border: 2px solid rgba(255,255,255,0.7);
+font-size: 15px; font-weight: 900; cursor: pointer;
 background: rgba(255,255,255,0.15); color: white;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
-transition: all 0.2s; letter-spacing: 0.5px;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+transition: all 0.2s;
 }
 .kana-btn.active {
-background: white; color: var(–main);
+background: white; color: #B5735A;
+border-color: white;
+box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.kana-btn.active {
+background: white; color: #B5735A;
 border-color: white;
 box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
@@ -108,19 +115,19 @@ box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 .mode-tabs {
 display: flex;
 background: white;
-border-bottom: 3px solid var(–border);
+border-bottom: 3px solid #EDD6CC;
 position: sticky; top: 64px; z-index: 90;
-transition: border-color 0.4s;
+
 }
 .mode-tab {
 flex: 1; padding: 18px 4px; text-align: center;
 font-size: 19px; font-weight: 700; cursor: pointer;
-border: none; background: transparent; color: var(–text-muted);
+border: none; background: transparent; color: #A88878;
 border-bottom: 4px solid transparent; margin-bottom: -3px;
 transition: all 0.2s;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 }
-.mode-tab.active { color: var(–main); border-bottom-color: var(–main); }
+.mode-tab.active { color: #B5735A; border-bottom-color: #B5735A; }
 
 /* ===== SCREENS ===== */
 .screen { display: none; padding: 20px 14px 100px; position: relative; z-index: 1; }
@@ -136,39 +143,39 @@ margin-bottom: 16px; flex-wrap: wrap; gap: 10px;
 .pill-toggle {
 display: flex; align-items: center; gap: 8px;
 font-size: 19px; font-weight: 700; cursor: pointer;
-background: white; border: 2.5px solid var(–border);
+background: white; border: 2.5px solid #EDD6CC;
 border-radius: 50px; padding: 12px 20px;
 transition: border-color 0.3s;
 }
 .pill-toggle input[type=“checkbox”] {
 width: 24px; height: 24px; cursor: pointer;
-accent-color: var(–main);
+accent-color: #B5735A;
 }
 
 .row-label {
-font-size: 16px; font-weight: 900; color: var(–text-muted);
+font-size: 16px; font-weight: 900; color: #A88878;
 letter-spacing: 2px; margin: 16px 0 8px 2px;
 text-transform: uppercase;
 }
 .row-label-phonetic {
-font-size: 18px; font-weight: 900; color: var(–main);
+font-size: 18px; font-weight: 900; color: #B5735A;
 letter-spacing: 0; font-style: normal;
 }
 .browse-tip {
-font-size: 17px; color: var(–text-muted); font-weight: 700;
+font-size: 17px; color: #A88878; font-weight: 700;
 margin-bottom: 14px; padding-left: 2px;
 }
 .kana-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
 
 .kana-card {
 background: white;
-border: 3px solid var(–border);
+border: 3px solid #EDD6CC;
 border-radius: 20px;
 padding: 12px 6px 10px;
 min-width: 82px; flex: 1; max-width: 108px;
 text-align: center; cursor: pointer;
 transition: all 0.15s;
-box-shadow: 0 4px 0 var(–border);
+box-shadow: 0 4px 0 #EDD6CC;
 user-select: none; position: relative;
 overflow: hidden;
 }
@@ -178,18 +185,18 @@ padding: 22px 6px 20px;
 .kana-card::after {
 content: ‘’;
 position: absolute; inset: 0;
-background: var(–main-light);
+background: #F2DDD6;
 opacity: 0; transition: opacity 0.15s;
 border-radius: 17px;
 }
 .kana-card:active, .kana-card.playing {
 transform: translateY(3px);
-box-shadow: 0 1px 0 var(–border);
+box-shadow: 0 1px 0 #EDD6CC;
 }
 .kana-card.playing::after { opacity: 1; }
 
 .kana-char {
-font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
+font-family: ‘Zen Maru Gothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 54px; line-height: 1.1; display: block;
 position: relative; z-index: 1;
 transition: font-size 0.2s;
@@ -197,7 +204,7 @@ transition: font-size 0.2s;
 .kana-card.compact .kana-char { font-size: 72px; }
 
 .kana-phonetic {
-font-size: 19px; font-weight: 900; color: var(–main);
+font-size: 19px; font-weight: 900; color: #B5735A;
 margin-top: 4px; position: relative; z-index: 1;
 transition: color 0.3s, opacity 0.2s, max-height 0.2s;
 max-height: 40px; overflow: hidden;
@@ -215,7 +222,7 @@ max-height: 60px; overflow: hidden;
 /* ===== PRACTICE ===== */
 .prac-wrap { max-width: 460px; margin: 0 auto; text-align: center; }
 .prac-progress {
-font-size: 20px; font-weight: 700; color: var(–text-muted);
+font-size: 20px; font-weight: 700; color: #A88878;
 margin-bottom: 16px;
 }
 /* Progress dots */
@@ -224,30 +231,30 @@ margin-bottom: 16px;
 width: 10px; height: 10px; border-radius: 50%;
 background: var(–border); transition: background 0.3s, transform 0.2s;
 }
-.prac-dot.done { background: var(–main); }
+.prac-dot.done { background: #B5735A; }
 .prac-dot.current { background: var(–accent1); transform: scale(1.3); }
 
 .prac-card {
 background: white; border-radius: 32px;
 padding: 40px 28px 32px;
-box-shadow: 0 8px 0 var(–border), 0 12px 30px rgba(0,0,0,0.06);
-border: 3px solid var(–border);
+box-shadow: 0 8px 0 #EDD6CC, 0 12px 30px rgba(0,0,0,0.06);
+border: 3px solid #EDD6CC;
 margin-bottom: 20px; position: relative; overflow: hidden;
 }
 .prac-card::before {
 content: ‘’;
 position: absolute; top: -30px; right: -30px;
 width: 120px; height: 120px; border-radius: 50%;
-background: var(–main-light); opacity: 0.6;
+background: #F2DDD6; opacity: 0.6;
 }
 .prac-kana {
-font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
+font-family: ‘Zen Maru Gothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 160px; line-height: 1; display: block;
 margin-bottom: 14px; position: relative; z-index: 1;
 filter: drop-shadow(2px 4px 0 rgba(0,0,0,0.08));
 }
 .prac-phonetic {
-font-size: 46px; font-weight: 900; color: var(–main);
+font-size: 46px; font-weight: 900; color: #B5735A;
 margin-bottom: 16px; position: relative; z-index: 1;
 transition: opacity 0.3s, color 0.3s;
 }
@@ -269,18 +276,18 @@ display: flex; align-items: center; justify-content: center; gap: 8px;
 font-size: 19px; font-weight: 700; cursor: pointer; margin-bottom: 14px;
 }
 .phonetic-toggle-row input[type=“checkbox”] {
-width: 24px; height: 24px; cursor: pointer; accent-color: var(–main);
+width: 24px; height: 24px; cursor: pointer; accent-color: #B5735A;
 }
 
 .play-big-btn {
 display: flex; align-items: center; justify-content: center; gap: 12px;
-background: var(–main); color: white; border: none;
+background: #B5735A; color: white; border: none;
 border-radius: 50px; font-size: 28px; font-weight: 900;
 padding: 26px 40px; cursor: pointer; width: 100%;
 margin-bottom: 16px;
 box-shadow: 0 6px 0 rgba(0,0,0,0.12), 0 8px 20px var(–main-shadow);
 transition: all 0.15s;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 }
 .play-big-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,0.12); }
 
@@ -288,15 +295,15 @@ font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 .nav-btn {
 flex: 1; padding: 22px; border-radius: 18px;
 font-size: 22px; font-weight: 900; cursor: pointer; border: none;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; transition: all 0.15s;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; transition: all 0.15s;
 }
 .nav-btn.prev {
-background: white; border: 3px solid var(–border); color: var(–text);
-box-shadow: 0 4px 0 var(–border);
+background: white; border: 3px solid #EDD6CC; color: #3A2820;
+box-shadow: 0 4px 0 #EDD6CC;
 }
-.nav-btn.prev:active { transform: translateY(3px); box-shadow: 0 1px 0 var(–border); }
+.nav-btn.prev:active { transform: translateY(3px); box-shadow: 0 1px 0 #EDD6CC; }
 .nav-btn.next {
-background: var(–accent-yellow); color: var(–accent-yellow-text);
+background: #EDE8B0; color: #6A6418;
 box-shadow: 0 4px 0 rgba(150,140,50,0.22);
 border: none;
 }
@@ -309,27 +316,27 @@ border: none;
 display: flex; justify-content: space-between; align-items: center;
 background: white; border-radius: 20px; padding: 14px 20px;
 margin-bottom: 18px; font-size: 17px; font-weight: 900;
-box-shadow: 0 4px 0 var(–border); border: 3px solid var(–border);
+box-shadow: 0 4px 0 #EDD6CC; border: 3px solid #EDD6CC;
 }
-.score-correct { color: var(–success); }
-.score-wrong { color: var(–error); }
-.score-prog { color: var(–text-muted); font-size: 14px; }
+.score-correct { color: #7AAF65; }
+.score-wrong { color: #B5735A; }
+.score-prog { color: #A88878; font-size: 14px; }
 
 .quiz-prompt-box {
 position: relative;
 background: white; border-radius: 26px; padding: 28px 22px 22px;
 margin-bottom: 16px;
-box-shadow: 0 6px 0 var(–border); border: 3px solid var(–border);
+box-shadow: 0 6px 0 #EDD6CC; border: 3px solid #EDD6CC;
 text-align: center;
 }
-.quiz-prompt-label { font-size: 22px; color: var(–text); font-weight: 900; margin-bottom: 12px; padding-right: 0; display: block; }
+.quiz-prompt-label { font-size: 22px; color: #3A2820; font-weight: 900; margin-bottom: 12px; padding-right: 0; display: block; }
 .quiz-speak-btn {
 display: inline-flex; align-items: center; gap: 6px;
-background: var(–main-light); color: var(–main);
-border: 2px solid var(–border);
+background: #F2DDD6; color: #B5735A;
+border: 2px solid #EDD6CC;
 border-radius: 50px; padding: 8px 20px;
 font-size: 17px; font-weight: 700; cursor: pointer;
-transition: all 0.15s; font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+transition: all 0.15s; font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 width: auto; box-shadow: none;
 position: static;
 }
@@ -349,30 +356,30 @@ display: flex; align-items: center; justify-content: center; gap: 8px;
 font-size: 19px; font-weight: 700; cursor: pointer; margin-bottom: 14px;
 }
 .quiz-hint-toggle-row input[type=“checkbox”] {
-width: 24px; height: 24px; cursor: pointer; accent-color: var(–main);
+width: 24px; height: 24px; cursor: pointer; accent-color: #B5735A;
 }
 
 .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
 .quiz-opt {
-background: white; border: 3px solid var(–border);
+background: white; border: 3px solid #EDD6CC;
 border-radius: 22px; padding: 18px 8px;
-font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif; font-size: 70px;
+font-family: ‘Zen Maru Gothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700; font-size: 70px;
 cursor: pointer; transition: all 0.15s;
-box-shadow: 0 5px 0 var(–border); line-height: 1;
+box-shadow: 0 5px 0 #EDD6CC; line-height: 1;
 position: relative; overflow: hidden;
 }
-.quiz-opt:active { transform: translateY(4px); box-shadow: 0 1px 0 var(–border); }
+.quiz-opt:active { transform: translateY(4px); box-shadow: 0 1px 0 #EDD6CC; }
 .quiz-opt.correct {
-border-color: var(–success); background: #F0FBF2;
+border-color: #7AAF65; background: #F0FBF2;
 box-shadow: 0 5px 0 rgba(122,175,101,0.4);
 }
 .quiz-opt.wrong {
-border-color: var(–error); background: #FFF0F0;
+border-color: #B5735A; background: #FFF0F0;
 box-shadow: 0 5px 0 rgba(181,115,90,0.3);
 opacity: 0.5;
 }
 .quiz-opt.reveal {
-border-color: var(–success); background: #E8F8EC;
+border-color: #7AAF65; background: #E8F8EC;
 box-shadow: 0 0 0 4px rgba(122,175,101,0.3), 0 5px 0 rgba(122,175,101,0.4);
 animation: revealBounce 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
 }
@@ -390,19 +397,19 @@ font-size: 26px; font-weight: 900; padding: 16px; border-radius: 16px;
 margin-bottom: 14px; display: none;
 }
 .quiz-feedback.show-correct {
-display: block; background: #F0FBF2; color: var(–success);
+display: block; background: #F0FBF2; color: #7AAF65;
 border: 2px solid rgba(107,203,119,0.4);
 }
 .quiz-feedback.show-wrong {
-display: block; background: #FFF0F0; color: var(–error);
+display: block; background: #FFF0F0; color: #B5735A;
 border: 2px solid rgba(255,107,107,0.3);
 }
 
 .quiz-next-btn {
-background: var(–accent-yellow); color: var(–accent-yellow-text); border: none;
+background: #EDE8B0; color: #6A6418; border: none;
 border-radius: 18px; padding: 24px; font-size: 24px; font-weight: 900;
 width: 100%; cursor: pointer; display: none;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(150,140,50,0.22);
 transition: all 0.15s;
 }
@@ -414,7 +421,7 @@ transition: all 0.15s;
 display: none; background: white; border-radius: 32px;
 padding: 50px 28px;
 box-shadow: 0 8px 0 var(–border), 0 12px 40px rgba(0,0,0,0.08);
-border: 3px solid var(–border); text-align: center;
+border: 3px solid #EDD6CC; text-align: center;
 }
 .quiz-finish.show { display: block; }
 .finish-emoji { font-size: 80px; margin-bottom: 14px; }
@@ -427,38 +434,38 @@ margin-bottom: 14px;
 padding: 10px 22px; border-radius: 50px;
 font-size: 20px; font-weight: 900;
 }
-.finish-score-correct { background: #EAFAF1; color: var(–success); }
-.finish-score-wrong { background: #FFF0EE; color: var(–error); }
+.finish-score-correct { background: #EAFAF1; color: #7AAF65; }
+.finish-score-wrong { background: #FFF0EE; color: #B5735A; }
 .finish-encourage {
-font-size: 20px; color: var(–text-muted); margin-bottom: 28px; line-height: 1.6;
+font-size: 20px; color: #A88878; margin-bottom: 28px; line-height: 1.6;
 }
 .finish-wrong-list {
 display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
 margin-bottom: 28px;
 }
 .finish-wrong-char {
-font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
+font-family: ‘Zen Maru Gothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 42px; line-height: 1;
 background: #FFF0EE; border: 2.5px solid #FFBCB0;
 border-radius: 14px; padding: 10px 14px;
-color: var(–text);
+color: #3A2820;
 }
 body.kata .finish-wrong-char { background: #EEF4FF; border-color: #B0C8FF; }
 .retry-btn {
 background: var(–error); color: white; border: none;
 border-radius: 18px; padding: 22px 40px; font-size: 22px; font-weight: 900;
 cursor: pointer; width: 100%; margin-bottom: 14px;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10);
 transition: all 0.15s;
 }
 body.kata .retry-btn { background: var(–k-main); }
 .retry-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0,0,0,0.10); }
 .restart-btn {
-background: var(–main); color: white; border: none;
+background: #B5735A; color: white; border: none;
 border-radius: 18px; padding: 26px 40px; font-size: 24px; font-weight: 900;
 cursor: pointer; width: 100%;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10), 0 8px 20px var(–main-shadow);
 transition: all 0.15s;
 }
@@ -500,7 +507,7 @@ border-radius: 36px;
 padding: 48px 40px 40px;
 text-align: center;
 box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 8px 0 var(–border);
-border: 3px solid var(–border);
+border: 3px solid #EDD6CC;
 min-width: 280px; max-width: 380px; width: 88%;
 position: relative;
 animation: cardPop 0.25s cubic-bezier(0.34,1.56,0.64,1);
@@ -510,13 +517,13 @@ from { transform: scale(0.7); opacity: 0; }
 to   { transform: scale(1);   opacity: 1; }
 }
 .card-modal-char {
-font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
+font-family: ‘Zen Maru Gothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 190px; line-height: 1;
 margin-bottom: 16px;
 filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.08));
 }
 .card-modal-phonetic {
-font-size: 54px; font-weight: 900; color: var(–main);
+font-size: 54px; font-weight: 900; color: #B5735A;
 margin-bottom: 18px; transition: color 0.3s;
 }
 .card-modal-hint {
@@ -526,12 +533,12 @@ border: 2px solid #FFD54F; border-radius: 16px;
 padding: 14px 18px; margin-bottom: 24px;
 }
 .card-modal-play {
-background: var(–main); color: white; border: none;
+background: #B5735A; color: white; border: none;
 border-radius: 50px; padding: 22px 40px;
 font-size: 26px; font-weight: 900; cursor: pointer;
 width: 100%;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10), 0 8px 20px var(–main-shadow);
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.15s;
 }
 .card-modal-play:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0,0,0,0.10); }
@@ -539,18 +546,18 @@ transition: all 0.15s;
 /* ===== ROW SELECTOR ===== */
 .row-selector { max-width: 520px; margin: 0 auto; }
 .row-sel-label {
-font-size: 24px; font-weight: 900; color: var(–text);
+font-size: 24px; font-weight: 900; color: #3A2820;
 text-align: center; margin-bottom: 20px;
 }
 
 /* 全部測驗 — 寬版橫條 */
 .row-sel-all-btn {
 display: flex; align-items: center; justify-content: center; gap: 16px;
-background: var(–main); color: white;
+background: #B5735A; color: white;
 border: none; border-radius: 24px; padding: 26px 32px;
 width: 100%; cursor: pointer;
 box-shadow: 0 6px 0 rgba(0,0,0,0.12), 0 10px 24px var(–main-shadow);
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.15s; margin-bottom: 20px;
 }
 .row-sel-all-btn:active { transform: translateY(5px); box-shadow: 0 1px 0 rgba(0,0,0,0.10); }
@@ -568,34 +575,34 @@ gap: 14px;
 
 /* 單行卡片 */
 .row-sel-card {
-background: white; border: 3px solid var(–border);
+background: white; border: 3px solid #EDD6CC;
 border-radius: 24px; padding: 20px 16px 18px;
 cursor: pointer; transition: all 0.15s;
-box-shadow: 0 5px 0 var(–border);
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
-text-align: center; width: 100%; border: 3px solid var(–border);
+box-shadow: 0 5px 0 #EDD6CC;
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+text-align: center; width: 100%; border: 3px solid #EDD6CC;
 }
-.row-sel-card:active { transform: translateY(4px); box-shadow: 0 1px 0 var(–border); }
+.row-sel-card:active { transform: translateY(4px); box-shadow: 0 1px 0 #EDD6CC; }
 
 .row-sel-card-kanas {
-font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
+font-family: ‘Zen Maru Gothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 28px; line-height: 1.3;
 display: block; margin-bottom: 10px;
-color: var(–text); letter-spacing: 2px;
+color: #3A2820; letter-spacing: 2px;
 }
 .row-sel-card-bottom {
 display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 .row-sel-card-name {
-font-size: 18px; font-weight: 900; color: var(–text);
+font-size: 18px; font-weight: 900; color: #3A2820;
 }
 .row-sel-card-phonetic {
-font-size: 17px; font-weight: 900; color: var(–main);
-background: var(–main-light); border-radius: 8px;
+font-size: 17px; font-weight: 900; color: #B5735A;
+background: #F2DDD6; border-radius: 8px;
 padding: 3px 10px;
 }
 .row-sel-card-count {
-font-size: 14px; font-weight: 700; color: var(–text-muted);
+font-size: 14px; font-weight: 700; color: #A88878;
 margin-top: 6px; display: block;
 }
 
@@ -605,10 +612,10 @@ display: flex; align-items: center; justify-content: space-between;
 margin-bottom: 12px;
 }
 .back-btn {
-background: white; border: 2.5px solid var(–border);
+background: white; border: 2.5px solid #EDD6CC;
 border-radius: 50px; padding: 12px 20px;
 font-size: 18px; font-weight: 700; cursor: pointer;
-font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; color: var(–text-muted);
+font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; color: #A88878;
 transition: all 0.15s;
 }
 .back-btn:active { transform: scale(0.96); }
@@ -618,17 +625,16 @@ transition: all 0.15s;
 font-size: 20px; font-weight: 900;
 display: flex; align-items: center; gap: 4px;
 }
-.quiz-scorebar-inline .score-prog { font-size: 14px; color: var(–text-muted); }
+.quiz-scorebar-inline .score-prog { font-size: 14px; color: #A88878; }
 
 /* ===== 金幣 ===== */
 .coin-badge {
 display: flex; align-items: center; gap: 4px;
 background: white;
-border: 2px solid var(–border);
-border-radius: 50px; padding: 7px 14px;
-font-size: 18px; font-weight: 900; color: var(–text);
-min-width: 70px; justify-content: center;
-
+border: 2px solid #EDD6CC;
+border-radius: 50px; padding: 5px 10px;
+font-size: 15px; font-weight: 900; color: #3A2820;
+min-width: 56px; justify-content: center;
 }
 @keyframes coinPop {
 0%   { transform: scale(1); }
@@ -639,35 +645,39 @@ min-width: 70px; justify-content: center;
 
 /* 手機直向（< 480px） */
 @media (max-width: 480px) {
-.header { padding: 12px 14px 10px; }
-.header-title { font-size: 20px; letter-spacing: 1px; }
-.header-icon { font-size: 26px; }
-.kana-btn { padding: 8px 13px; font-size: 15px; }
-.mode-tab { font-size: 15px; padding: 14px 4px; }
-.screen { padding: 14px 10px 80px; }
-.browse-topbar h2 { font-size: 20px; }
-.browse-tip { font-size: 14px; }
-.kana-card { min-width: 64px; max-width: 82px; padding: 10px 4px 8px; }
-.kana-char { font-size: 44px; }
-.kana-phonetic { font-size: 15px; }
-.kana-hint { font-size: 11px; }
-.prac-kana { font-size: 118px; }
-.prac-phonetic { font-size: 36px; }
-.prac-hint-box { font-size: 17px; padding: 13px 16px; }
-.play-big-btn { font-size: 22px; padding: 20px 28px; }
-.nav-btn { font-size: 18px; padding: 18px; }
-.quiz-opt { font-size: 54px; padding: 14px 6px; }
-.quiz-speak-btn { font-size: 22px; padding: 18px 28px; }
-.quiz-next-btn { font-size: 20px; padding: 20px; }
-.row-sel-btn { padding: 16px 18px; }
-.row-sel-name { font-size: 17px; }
-.row-sel-kanas { font-size: 24px; }
-.row-sel-phonetic { font-size: 18px; padding: 3px 9px; }
-.card-modal-char { font-size: 130px; }
-.card-modal-phonetic { font-size: 42px; }
-.card-modal-hint { font-size: 18px; }
-.card-modal-play { font-size: 20px; padding: 16px 28px; }
-.card-modal-inner { padding: 36px 24px 30px; }
+.header { padding: 10px 12px 8px; }
+.header-title { font-size: 18px; letter-spacing: 0.5px; }
+.header-icon { font-size: 22px; }
+.header-greeting { font-size: 11px; max-width: 200px; }
+.kana-btn { padding: 6px 10px; font-size: 13px; }
+.coin-badge { font-size: 13px; padding: 4px 8px; min-width: 46px; }
+.mode-tab { font-size: 14px; padding: 12px 4px; }
+.screen { padding: 12px 10px 80px; }
+.browse-topbar h2 { font-size: 18px; }
+.browse-tip { font-size: 13px; }
+.kana-card { min-width: 56px; max-width: 72px; padding: 10px 4px 8px; }
+.kana-char { font-size: 36px; }
+.kana-card.compact .kana-char { font-size: 50px; }
+.kana-phonetic { font-size: 13px; }
+.kana-hint { font-size: 10px; }
+.prac-kana { font-size: 100px; }
+.prac-phonetic { font-size: 30px; }
+.prac-hint-box { font-size: 15px; padding: 12px 14px; }
+.play-big-btn { font-size: 20px; padding: 18px 24px; }
+.nav-btn { font-size: 17px; padding: 16px; }
+.quiz-opt { font-size: 46px; padding: 12px 6px; }
+.quiz-speak-btn { font-size: 20px; padding: 16px 24px; }
+.quiz-next-btn { font-size: 18px; padding: 18px; }
+.row-sel-card-kanas { font-size: 22px; }
+.row-sel-card-name { font-size: 15px; }
+.row-sel-card-phonetic { font-size: 14px; }
+.row-sel-all-title { font-size: 20px; }
+.row-sel-all-sub { font-size: 14px; }
+.card-modal-char { font-size: 110px; }
+.card-modal-phonetic { font-size: 36px; }
+.card-modal-hint { font-size: 16px; }
+.card-modal-play { font-size: 18px; padding: 14px 24px; }
+.card-modal-inner { padding: 30px 20px 26px; }
 }
 
 /* 平板直向（481px ~ 768px） — 阿嬤的主要裝置，維持放大後的原始設計 */
@@ -707,6 +717,26 @@ min-width: 70px; justify-content: center;
 .mode-tabs { justify-content: center; }
 .mode-tab { flex: 0; padding: 18px 56px; font-size: 20px; }
 }
+
+/* ===== 片假名主題色覆寫 ===== */
+body.kata .header { background: #5A8EB5 !important; }
+body.kata .kana-btn.active { color: #5A8EB5 !important; }
+body.kata .mode-tab.active { color: #5A8EB5 !important; border-bottom-color: #5A8EB5 !important; }
+body.kata .kana-phonetic { color: #5A8EB5 !important; }
+body.kata .row-label-phonetic { color: #5A8EB5 !important; }
+body.kata .kana-card.compact .kana-char { color: #3A2820; }
+body.kata .browse-topbar h2 { color: #3A2820; }
+body.kata .pill-toggle input[type=“checkbox”] { accent-color: #5A8EB5; }
+body.kata .play-big-btn { background: #5A8EB5 !important; }
+body.kata .quiz-speak-btn { background: #5A8EB5 !important; }
+body.kata .restart-btn { background: #5A8EB5 !important; }
+body.kata .retry-btn { background: #5A8EB5 !important; }
+body.kata .row-sel-all-btn { background: #5A8EB5 !important; }
+body.kata .row-sel-card-phonetic { color: #5A8EB5 !important; background: #D6E8F2 !important; }
+body.kata .card-modal-phonetic { color: #5A8EB5 !important; }
+body.kata .card-modal-play { background: #5A8EB5 !important; }
+body.kata .yt-btn { background: #5A8EB5 !important; }
+body.kata .kana-card.playing { border-color: #5A8EB5 !important; background: #D6E8F2 !important; }
 </style>
 
 </head>
@@ -716,21 +746,21 @@ min-width: 70px; justify-content: center;
   <div class="header-left">
     <div class="header-icon">🌸</div>
     <div>
-      <div class="header-title">阿嬤的五十音學習</div>
+      <div class="header-title">五十音學習</div>
       <div class="header-greeting" id="header-greeting"></div>
     </div>
   </div>
-  <div style="display:flex;align-items:center;gap:10px">
+  <div style="display:flex;align-items:center;gap:8px">
     <div class="coin-badge" id="coin-badge">💰 <span id="coin-count">0</span></div>
     <div class="kana-switch">
-      <button class="kana-btn active" id="btn-hira" onclick="switchKana('hira')">平假名</button>
-      <button class="kana-btn" id="btn-kata" onclick="switchKana('kata')">片假名</button>
+      <button class="kana-btn active" id="btn-hira" onclick="switchKana('hira')">平</button>
+      <button class="kana-btn" id="btn-kata" onclick="switchKana('kata')">片</button>
     </div>
   </div>
 </div>
 
 <div class="mode-tabs">
-  <button class="mode-tab active" onclick="switchMode('browse')">📖 瀏覽</button>
+  <button class="mode-tab active" onclick="switchMode('browse')">📖 學習</button>
   <button class="mode-tab" onclick="switchMode('quiz')">✏️ 小測驗</button>
 </div>
 
@@ -1312,7 +1342,7 @@ updateCoinDisplay();
 
 // 阿涵的隨機問候語
 const GREETINGS = [
-  '阿嬤今天也要加油喔！💪🏻',
+  '阿嬤今天也要認真學日文！💪🏻',
   '阿嬤很讚哦～👍🏻',
   '阿嬤練習一下，很快就會了🥳',
   '今天也要一起學日文！🤓',
