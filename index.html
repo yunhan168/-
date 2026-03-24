@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>阿嬤的五十音學習</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Zen+Maru+Gothic:wght@700;900&family=Varela+Round&display=swap');
 
 :root {
 –bg: #FDF5F2;
@@ -48,7 +47,7 @@ body.kata {
 - { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
 body {
-font-family: ‘Noto Sans TC’, ‘Varela Round’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Hiragino Kaku Gothic ProN’, ‘Yu Gothic’, ‘Microsoft JhengHei’, sans-serif;
 background: var(–bg);
 color: var(–text);
 min-height: 100vh;
@@ -86,7 +85,7 @@ background: var(–main); color: white;
 border-radius: 50px; padding: 14px 32px;
 font-size: 19px; font-weight: 900;
 text-decoration: none;
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 4px 16px var(–main-shadow);
 transition: all 0.15s; width: 100%; max-width: 420px;
 }
@@ -96,7 +95,7 @@ padding: 12px 20px; border-radius: 50px;
 border: 2.5px solid rgba(255,255,255,0.7);
 font-size: 18px; font-weight: 900; cursor: pointer;
 background: rgba(255,255,255,0.15); color: white;
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.2s; letter-spacing: 0.5px;
 }
 .kana-btn.active {
@@ -119,7 +118,7 @@ font-size: 19px; font-weight: 700; cursor: pointer;
 border: none; background: transparent; color: var(–text-muted);
 border-bottom: 4px solid transparent; margin-bottom: -3px;
 transition: all 0.2s;
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 }
 .mode-tab.active { color: var(–main); border-bottom-color: var(–main); }
 
@@ -190,7 +189,7 @@ box-shadow: 0 1px 0 var(–border);
 .kana-card.playing::after { opacity: 1; }
 
 .kana-char {
-font-family: ‘Zen Maru Gothic’, serif;
+font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
 font-size: 54px; line-height: 1.1; display: block;
 position: relative; z-index: 1;
 transition: font-size 0.2s;
@@ -242,7 +241,7 @@ width: 120px; height: 120px; border-radius: 50%;
 background: var(–main-light); opacity: 0.6;
 }
 .prac-kana {
-font-family: ‘Zen Maru Gothic’, serif;
+font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
 font-size: 160px; line-height: 1; display: block;
 margin-bottom: 14px; position: relative; z-index: 1;
 filter: drop-shadow(2px 4px 0 rgba(0,0,0,0.08));
@@ -281,7 +280,7 @@ padding: 26px 40px; cursor: pointer; width: 100%;
 margin-bottom: 16px;
 box-shadow: 0 6px 0 rgba(0,0,0,0.12), 0 8px 20px var(–main-shadow);
 transition: all 0.15s;
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 }
 .play-big-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,0.12); }
 
@@ -289,7 +288,7 @@ font-family: ‘Noto Sans TC’, sans-serif;
 .nav-btn {
 flex: 1; padding: 22px; border-radius: 18px;
 font-size: 22px; font-weight: 900; cursor: pointer; border: none;
-font-family: ‘Noto Sans TC’, sans-serif; transition: all 0.15s;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; transition: all 0.15s;
 }
 .nav-btn.prev {
 background: white; border: 3px solid var(–border); color: var(–text);
@@ -330,7 +329,7 @@ background: var(–main-light); color: var(–main);
 border: 2px solid var(–border);
 border-radius: 50px; padding: 8px 20px;
 font-size: 17px; font-weight: 700; cursor: pointer;
-transition: all 0.15s; font-family: ‘Noto Sans TC’, sans-serif;
+transition: all 0.15s; font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 width: auto; box-shadow: none;
 position: static;
 }
@@ -357,7 +356,7 @@ width: 24px; height: 24px; cursor: pointer; accent-color: var(–main);
 .quiz-opt {
 background: white; border: 3px solid var(–border);
 border-radius: 22px; padding: 18px 8px;
-font-family: ‘Zen Maru Gothic’, serif; font-size: 70px;
+font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif; font-size: 70px;
 cursor: pointer; transition: all 0.15s;
 box-shadow: 0 5px 0 var(–border); line-height: 1;
 position: relative; overflow: hidden;
@@ -403,7 +402,7 @@ border: 2px solid rgba(255,107,107,0.3);
 background: var(–accent-yellow); color: var(–accent-yellow-text); border: none;
 border-radius: 18px; padding: 24px; font-size: 24px; font-weight: 900;
 width: 100%; cursor: pointer; display: none;
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(150,140,50,0.22);
 transition: all 0.15s;
 }
@@ -438,7 +437,7 @@ display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
 margin-bottom: 28px;
 }
 .finish-wrong-char {
-font-family: ‘Zen Maru Gothic’, serif;
+font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
 font-size: 42px; line-height: 1;
 background: #FFF0EE; border: 2.5px solid #FFBCB0;
 border-radius: 14px; padding: 10px 14px;
@@ -449,7 +448,7 @@ body.kata .finish-wrong-char { background: #EEF4FF; border-color: #B0C8FF; }
 background: var(–error); color: white; border: none;
 border-radius: 18px; padding: 22px 40px; font-size: 22px; font-weight: 900;
 cursor: pointer; width: 100%; margin-bottom: 14px;
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10);
 transition: all 0.15s;
 }
@@ -459,7 +458,7 @@ body.kata .retry-btn { background: var(–k-main); }
 background: var(–main); color: white; border: none;
 border-radius: 18px; padding: 26px 40px; font-size: 24px; font-weight: 900;
 cursor: pointer; width: 100%;
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10), 0 8px 20px var(–main-shadow);
 transition: all 0.15s;
 }
@@ -511,7 +510,7 @@ from { transform: scale(0.7); opacity: 0; }
 to   { transform: scale(1);   opacity: 1; }
 }
 .card-modal-char {
-font-family: ‘Zen Maru Gothic’, serif;
+font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
 font-size: 190px; line-height: 1;
 margin-bottom: 16px;
 filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.08));
@@ -532,7 +531,7 @@ border-radius: 50px; padding: 22px 40px;
 font-size: 26px; font-weight: 900; cursor: pointer;
 width: 100%;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10), 0 8px 20px var(–main-shadow);
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.15s;
 }
 .card-modal-play:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0,0,0,0.10); }
@@ -551,7 +550,7 @@ background: var(–main); color: white;
 border: none; border-radius: 24px; padding: 26px 32px;
 width: 100%; cursor: pointer;
 box-shadow: 0 6px 0 rgba(0,0,0,0.12), 0 10px 24px var(–main-shadow);
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.15s; margin-bottom: 20px;
 }
 .row-sel-all-btn:active { transform: translateY(5px); box-shadow: 0 1px 0 rgba(0,0,0,0.10); }
@@ -573,13 +572,13 @@ background: white; border: 3px solid var(–border);
 border-radius: 24px; padding: 20px 16px 18px;
 cursor: pointer; transition: all 0.15s;
 box-shadow: 0 5px 0 var(–border);
-font-family: ‘Noto Sans TC’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 text-align: center; width: 100%; border: 3px solid var(–border);
 }
 .row-sel-card:active { transform: translateY(4px); box-shadow: 0 1px 0 var(–border); }
 
 .row-sel-card-kanas {
-font-family: ‘Zen Maru Gothic’, serif;
+font-family: ‘Hiragino Sans’, ‘Yu Gothic’, ‘MS Gothic’, serif;
 font-size: 28px; line-height: 1.3;
 display: block; margin-bottom: 10px;
 color: var(–text); letter-spacing: 2px;
@@ -609,7 +608,7 @@ margin-bottom: 12px;
 background: white; border: 2.5px solid var(–border);
 border-radius: 50px; padding: 12px 20px;
 font-size: 18px; font-weight: 700; cursor: pointer;
-font-family: ‘Noto Sans TC’, sans-serif; color: var(–text-muted);
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; color: var(–text-muted);
 transition: all 0.15s;
 }
 .back-btn:active { transform: scale(0.96); }
