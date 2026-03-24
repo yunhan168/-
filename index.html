@@ -1341,6 +1341,12 @@ function shuffle(arr) {
   return a;
 }
 
+
+// 阻擋長按選取和右鍵選單
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+document.addEventListener('copy', e => e.preventDefault());
+
 // INIT
 renderBrowse();
 renderRowSelectors();
