@@ -6,13 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>阿嬤的五十音學習</title>
 <style>
-@import url('https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css');
-@font-face {
-  font-family: 'ZenMaruGothic';
-  src: url('https://cdn.jsdelivr.net/gh/googlefonts/zen-fonts@main/ZenMaruGothic/fonts/ttf/ZenMaruGothic-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-}
 
 :root {
 –bg: #FDF5F2;
@@ -54,7 +47,7 @@ body.kata {
 - { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; }
 
 body {
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 background: #FDF5F2;
 color: #3A2820;
 min-height: 100vh;
@@ -92,7 +85,7 @@ background: #B5735A; color: white;
 border-radius: 50px; padding: 14px 32px;
 font-size: 19px; font-weight: 900;
 text-decoration: none;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 4px 16px var(–main-shadow);
 transition: all 0.15s; width: 100%; max-width: 420px;
 }
@@ -103,7 +96,7 @@ padding: 8px 12px; border-radius: 50px;
 border: 2px solid rgba(255,255,255,0.7);
 font-size: 15px; font-weight: 900; cursor: pointer;
 background: rgba(255,255,255,0.15); color: white;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.2s;
 }
 .kana-btn.active {
@@ -131,7 +124,7 @@ font-size: 19px; font-weight: 700; cursor: pointer;
 border: none; background: transparent; color: #A88878;
 border-bottom: 4px solid transparent; margin-bottom: -3px;
 transition: all 0.2s;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 }
 .mode-tab.active { color: #B5735A; border-bottom-color: #B5735A; }
 
@@ -202,15 +195,15 @@ box-shadow: 0 1px 0 #EDD6CC;
 .kana-card.playing::after { opacity: 1; }
 
 .kana-char {
-font-family: ‘ZenMaruGothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino MaruGothic ProN’, ‘Yu Gothic’, sans-serif; font-weight: 700;
-font-size: 54px; line-height: 1.1; display: block;
+font-family: ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
+font-size: 50px; line-height: 1.1; display: block;
 position: relative; z-index: 1;
 transition: font-size 0.2s;
 }
 .kana-card.compact .kana-char { font-size: 72px; }
 
 .kana-phonetic {
-font-size: 19px; font-weight: 900; color: #B5735A;
+font-size: 24px; font-weight: 900; color: #B5735A;
 margin-top: 4px; position: relative; z-index: 1;
 transition: color 0.3s, opacity 0.2s, max-height 0.2s;
 max-height: 40px; overflow: hidden;
@@ -218,7 +211,7 @@ max-height: 40px; overflow: hidden;
 .kana-phonetic.hidden { opacity: 0; max-height: 0; margin-top: 0; }
 
 .kana-hint {
-font-size: 13px; color: #C09080; margin-top: 5px;
+font-size: 14px; color: #C09080; margin-top: 5px;
 line-height: 1.35; position: relative; z-index: 1;
 transition: opacity 0.2s, max-height 0.2s;
 max-height: 60px; overflow: hidden;
@@ -254,7 +247,7 @@ width: 120px; height: 120px; border-radius: 50%;
 background: #F2DDD6; opacity: 0.6;
 }
 .prac-kana {
-font-family: ‘ZenMaruGothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino MaruGothic ProN’, ‘Yu Gothic’, sans-serif; font-weight: 700;
+font-family: ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 160px; line-height: 1; display: block;
 margin-bottom: 14px; position: relative; z-index: 1;
 filter: drop-shadow(2px 4px 0 rgba(0,0,0,0.08));
@@ -293,7 +286,7 @@ padding: 26px 40px; cursor: pointer; width: 100%;
 margin-bottom: 16px;
 box-shadow: 0 6px 0 rgba(0,0,0,0.12), 0 8px 20px var(–main-shadow);
 transition: all 0.15s;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 }
 .play-big-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,0.12); }
 
@@ -301,7 +294,7 @@ font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, 
 .nav-btn {
 flex: 1; padding: 22px; border-radius: 18px;
 font-size: 22px; font-weight: 900; cursor: pointer; border: none;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; transition: all 0.15s;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; transition: all 0.15s;
 }
 .nav-btn.prev {
 background: white; border: 3px solid #EDD6CC; color: #3A2820;
@@ -342,7 +335,7 @@ background: #F2DDD6; color: #B5735A;
 border: 2px solid #EDD6CC;
 border-radius: 50px; padding: 8px 20px;
 font-size: 17px; font-weight: 700; cursor: pointer;
-transition: all 0.15s; font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+transition: all 0.15s; font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 width: auto; box-shadow: none;
 position: static;
 }
@@ -369,7 +362,7 @@ width: 24px; height: 24px; cursor: pointer; accent-color: #B5735A;
 .quiz-opt {
 background: white; border: 3px solid #EDD6CC;
 border-radius: 22px; padding: 18px 8px;
-font-family: ‘ZenMaruGothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino MaruGothic ProN’, ‘Yu Gothic’, sans-serif; font-weight: 700; font-size: 70px;
+font-family: ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700; font-size: 70px;
 cursor: pointer; transition: all 0.15s;
 box-shadow: 0 5px 0 #EDD6CC; line-height: 1;
 position: relative; overflow: hidden;
@@ -415,7 +408,7 @@ border: 2px solid rgba(255,107,107,0.3);
 background: #EDE8B0; color: #6A6418; border: none;
 border-radius: 18px; padding: 24px; font-size: 24px; font-weight: 900;
 width: 100%; cursor: pointer; display: none;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(150,140,50,0.22);
 transition: all 0.15s;
 }
@@ -450,7 +443,7 @@ display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
 margin-bottom: 28px;
 }
 .finish-wrong-char {
-font-family: ‘ZenMaruGothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino MaruGothic ProN’, ‘Yu Gothic’, sans-serif; font-weight: 700;
+font-family: ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 42px; line-height: 1;
 background: #FFF0EE; border: 2.5px solid #FFBCB0;
 border-radius: 14px; padding: 10px 14px;
@@ -461,7 +454,7 @@ body.kata .finish-wrong-char { background: #EEF4FF; border-color: #B0C8FF; }
 background: var(–error); color: white; border: none;
 border-radius: 18px; padding: 22px 40px; font-size: 22px; font-weight: 900;
 cursor: pointer; width: 100%; margin-bottom: 14px;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10);
 transition: all 0.15s;
 }
@@ -471,7 +464,7 @@ body.kata .retry-btn { background: var(–k-main); }
 background: #B5735A; color: white; border: none;
 border-radius: 18px; padding: 26px 40px; font-size: 24px; font-weight: 900;
 cursor: pointer; width: 100%;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 box-shadow: 0 5px 0 rgba(0,0,0,0.10), 0 8px 20px var(–main-shadow);
 transition: all 0.15s;
 }
@@ -499,56 +492,6 @@ to { opacity: 1; transform: translateY(0); }
 }
 .fade-in { animation: fadeIn 0.3s ease forwards; }
 
-/* ===== CARD MODAL ===== */
-.card-modal-overlay {
-display: none; position: fixed; inset: 0; z-index: 200;
-background: rgba(58,45,40,0.45);
-backdrop-filter: blur(6px);
-align-items: center; justify-content: center;
-}
-.card-modal-overlay.show { display: flex; animation: fadeIn 0.2s ease; }
-.card-modal-inner {
-background: white;
-border-radius: 36px;
-padding: 48px 40px 40px;
-text-align: center;
-box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 8px 0 var(–border);
-border: 3px solid #EDD6CC;
-min-width: 280px; max-width: 380px; width: 88%;
-position: relative;
-animation: cardPop 0.25s cubic-bezier(0.34,1.56,0.64,1);
-}
-@keyframes cardPop {
-from { transform: scale(0.7); opacity: 0; }
-to   { transform: scale(1);   opacity: 1; }
-}
-.card-modal-char {
-font-family: ‘ZenMaruGothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino MaruGothic ProN’, ‘Yu Gothic’, sans-serif; font-weight: 700;
-font-size: 190px; line-height: 1;
-margin-bottom: 16px;
-filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.08));
-}
-.card-modal-phonetic {
-font-size: 54px; font-weight: 900; color: #B5735A;
-margin-bottom: 18px; transition: color 0.3s;
-}
-.card-modal-hint {
-font-size: 22px; color: #7A5C48; line-height: 1.6;
-background: linear-gradient(135deg, #FFF8E1, #FFFDE7);
-border: 2px solid #FFD54F; border-radius: 16px;
-padding: 14px 18px; margin-bottom: 24px;
-}
-.card-modal-play {
-background: #B5735A; color: white; border: none;
-border-radius: 50px; padding: 22px 40px;
-font-size: 26px; font-weight: 900; cursor: pointer;
-width: 100%;
-box-shadow: 0 5px 0 rgba(0,0,0,0.10), 0 8px 20px var(–main-shadow);
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
-transition: all 0.15s;
-}
-.card-modal-play:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0,0,0,0.10); }
-
 /* ===== ROW SELECTOR ===== */
 .row-selector { max-width: 520px; margin: 0 auto; }
 .row-sel-label {
@@ -563,7 +506,7 @@ background: #B5735A; color: white;
 border: none; border-radius: 24px; padding: 26px 32px;
 width: 100%; cursor: pointer;
 box-shadow: 0 6px 0 rgba(0,0,0,0.12), 0 10px 24px var(–main-shadow);
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.15s; margin-bottom: 20px;
 }
 .row-sel-all-btn:active { transform: translateY(5px); box-shadow: 0 1px 0 rgba(0,0,0,0.10); }
@@ -585,13 +528,13 @@ background: white; border: 3px solid #EDD6CC;
 border-radius: 24px; padding: 20px 16px 18px;
 cursor: pointer; transition: all 0.15s;
 box-shadow: 0 5px 0 #EDD6CC;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 text-align: center; width: 100%; border: 3px solid #EDD6CC;
 }
 .row-sel-card:active { transform: translateY(4px); box-shadow: 0 1px 0 #EDD6CC; }
 
 .row-sel-card-kanas {
-font-family: ‘ZenMaruGothic’, ‘Hiragino Rounded Gothic ProN’, ‘Hiragino MaruGothic ProN’, ‘Yu Gothic’, sans-serif; font-weight: 700;
+font-family: ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 700;
 font-size: 28px; line-height: 1.3;
 display: block; margin-bottom: 10px;
 color: #3A2820; letter-spacing: 2px;
@@ -621,7 +564,7 @@ margin-bottom: 12px;
 background: white; border: 2.5px solid #EDD6CC;
 border-radius: 50px; padding: 12px 20px;
 font-size: 18px; font-weight: 700; cursor: pointer;
-font-family: ‘Noto Sans TC’, ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; color: #A88878;
+font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif; color: #A88878;
 transition: all 0.15s;
 }
 .back-btn:active { transform: scale(0.96); }
@@ -649,6 +592,61 @@ min-width: 56px; justify-content: center;
 }
 .coin-pop { animation: coinPop 0.35s cubic-bezier(0.34,1.56,0.64,1); }
 
+/* ===== 大卡片模式 ===== */
+.fab-view-btn {
+position: fixed; bottom: 90px; right: 20px; z-index: 150;
+width: 60px; height: 60px; border-radius: 50%;
+background: #B5735A; color: white; border: none;
+cursor: pointer; display: flex; align-items: center; justify-content: center;
+box-shadow: 0 6px 20px rgba(181,115,90,0.45);
+transition: all 0.2s;
+}
+.fab-view-btn:active { transform: scale(0.92); }
+.fab-view-btn.active { background: #C4956A; }
+body.kata .fab-view-btn { background: #5A8EB5; box-shadow: 0 6px 20px rgba(90,142,181,0.45); }
+body.kata .fab-view-btn.active { background: #1A3A5A; }
+
+/* 大卡片行 - 橫向滑動 */
+.big-kana-row {
+display: flex; gap: 12px;
+overflow-x: auto; overflow-y: visible;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
+padding: 4px 2px 12px;
+scrollbar-width: none;
+}
+.big-kana-row::-webkit-scrollbar { display: none; }
+
+.big-kana-card {
+flex-shrink: 0;
+width: calc(100vw - 80px);
+max-width: 320px;
+scroll-snap-align: center;
+background: white; border: 3px solid #EDD6CC;
+border-radius: 28px; padding: 28px 16px 22px;
+text-align: center; cursor: pointer;
+box-shadow: 0 6px 0 #EDD6CC; user-select: none;
+transition: all 0.15s;
+}
+.big-kana-card:active { transform: translateY(4px); box-shadow: 0 2px 0 #EDD6CC; }
+
+.big-kana-char {
+font-family: ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif;
+font-size: 80px; font-weight: 900; line-height: 1; display: block; margin-bottom: 8px;
+}
+.big-kana-phonetic {
+font-size: 36px; font-weight: 900; color: #B5735A; margin-top: 4px; margin-bottom: 12px;
+transition: opacity 0.2s; max-height: 50px; overflow: hidden;
+}
+.big-kana-phonetic.hidden { opacity: 0; max-height: 0; margin-top: 0; }
+body.kata .big-kana-phonetic { color: #5A8EB5; }
+.big-kana-hint {
+font-size: 15px; color: #A88878; margin-top: 8px;
+line-height: 1.4; transition: opacity 0.2s, max-height 0.2s;
+max-height: 80px; overflow: hidden;
+}
+.big-kana-hint.hidden { opacity: 0; max-height: 0; margin-top: 0; }
+
 /* 手機直向（< 480px） */
 @media (max-width: 480px) {
 .header { padding: 10px 12px 8px; }
@@ -662,10 +660,10 @@ min-width: 56px; justify-content: center;
 .browse-topbar h2 { font-size: 18px; }
 .browse-tip { font-size: 13px; }
 .kana-card { min-width: 56px; max-width: 72px; padding: 10px 4px 8px; }
-.kana-char { font-size: 36px; }
+.kana-char { font-size: 42px; }
 .kana-card.compact .kana-char { font-size: 50px; }
-.kana-phonetic { font-size: 13px; }
-.kana-hint { font-size: 10px; }
+.kana-phonetic { font-size: 18px; }
+.kana-hint { font-size: 11px; }
 .prac-kana { font-size: 100px; }
 .prac-phonetic { font-size: 30px; }
 .prac-hint-box { font-size: 15px; padding: 12px 14px; }
@@ -679,11 +677,7 @@ min-width: 56px; justify-content: center;
 .row-sel-card-phonetic { font-size: 14px; }
 .row-sel-all-title { font-size: 20px; }
 .row-sel-all-sub { font-size: 14px; }
-.card-modal-char { font-size: 110px; }
-.card-modal-phonetic { font-size: 36px; }
-.card-modal-hint { font-size: 16px; }
-.card-modal-play { font-size: 18px; padding: 14px 24px; }
-.card-modal-inner { padding: 30px 20px 26px; }
+
 }
 
 /* 平板直向（481px ~ 768px） — 阿嬤的主要裝置，維持放大後的原始設計 */
@@ -739,12 +733,10 @@ body.kata .restart-btn { background: #5A8EB5 !important; }
 body.kata .retry-btn { background: #5A8EB5 !important; }
 body.kata .row-sel-all-btn { background: #5A8EB5 !important; }
 body.kata .row-sel-card-phonetic { color: #5A8EB5 !important; background: #D6E8F2 !important; }
-body.kata .card-modal-phonetic { color: #5A8EB5 !important; }
-body.kata .card-modal-play { background: #5A8EB5 !important; }
 body.kata .yt-btn { background: #5A8EB5 !important; }
 body.kata .kana-card.playing { border-color: #5A8EB5 !important; background: #D6E8F2 !important; }
-</style>
 
+</style>
 </head>
 <body>
 
@@ -780,7 +772,7 @@ body.kata .kana-card.playing { border-color: #5A8EB5 !important; background: #D6
       記憶提示
     </label>
   </div>
-  <div class="browse-tip">💡 點一下播放發音，長按放大</div>
+  <div class="browse-tip">💡 點一下播放發音</div>
   <div id="browse-grid"></div>
 </div>
 
@@ -830,87 +822,83 @@ body.kata .kana-card.playing { border-color: #5A8EB5 !important; background: #D6
   </div>
 </div>
 
-<!-- CARD MODAL -->
-
-<div id="card-modal" class="card-modal-overlay">
-  <div id="card-modal-inner" class="card-modal-inner">
-    <div class="card-modal-char" id="card-modal-char"></div>
-    <div class="card-modal-phonetic" id="card-modal-phonetic"></div>
-    <div class="card-modal-hint" id="card-modal-hint"></div>
-    <button class="card-modal-play" onclick="speak(document.getElementById('card-modal-char').textContent)">🔊 播放發音</button>
-  </div>
-</div>
+<button class="fab-view-btn" id="view-toggle-btn" onclick="toggleView()"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="7" y1="21" x2="21" y2="7" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+<polyline points="14,7 21,7 21,14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="14,21 7,21 7,14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></button>
 
 <script>
+
 // ===== DATA =====
 const ROWS = [
   { label: 'あ行', rowPhonetic: '', items: [
-    { hira:'あ', kata:'ア', phonetic:'ㄚ',   hint:'伸開雙臂大喊「啊！」的人', hintKata:'像あ的上半部，撇了一筆' },
-    { hira:'い', kata:'イ', phonetic:'一',   hint:'兩人手拉手，說「依～」', hintKata:'像い的右半邊，一撇一豎' },
-    { hira:'う', kata:'ウ', phonetic:'ㄨ',   hint:'戴帽子嘴往前嘟「嗚～」', hintKata:'像う去掉彎曲，三橫撇' },
-    { hira:'え', kata:'エ', phonetic:'ㄝ',   hint:'工字形，工人「ㄝ」好累', hintKata:'像え簡化成工字，三橫一豎' },
-    { hira:'お', kata:'オ', phonetic:'ㄛ',   hint:'被嚇到叫「喔！」的嘴形', hintKata:'像お拿掉圓圈，一橫一撇一豎' },
+    { hira:'あ', kata:'ア', phonetic:'ㄚ',   hint:'伸開雙臂大喊「啊！」的人', hintKata:'三撇像張開的手，大喊「啊！」' },
+    { hira:'い', kata:'イ', phonetic:'一',   hint:'兩人手拉手，說「依～」', hintKata:'兩撇像兩條腿走路「依依」' },
+    { hira:'う', kata:'ウ', phonetic:'ㄨ',   hint:'戴帽子嘴往前嘟「嗚～」', hintKata:'上面一撇像帽子，底下一橫嘟嘴「嗚」' },
+    { hira:'え', kata:'エ', phonetic:'ㄝ',   hint:'工字形，工人「ㄝ」好累', hintKata:'上下兩橫中間一豎，工字「ㄝ」' },
+    { hira:'お', kata:'オ', phonetic:'ㄛ',   hint:'嘴巴張大，開心大笑「喔！好好玩！」', hintKata:'三筆像煙火炸開，開心喊「喔！」' },
   ]},
   { label: 'か行', rowPhonetic: 'ㄎ', items: [
-    { hira:'か', kata:'カ', phonetic:'ㄎㄚ', hint:'右邊一撇一豎，像人伸出右手', hintKata:'像か右半邊，一撇加一豎' },
-    { hira:'き', kata:'キ', phonetic:'ㄎ一', hint:'有兩根鬍鬚的鑰匙', hintKata:'像き拉直，四橫加一豎' },
-    { hira:'く', kata:'ク', phonetic:'ㄎㄨ', hint:'鳥嘴張開大叫', hintKata:'像く加了一撇，嘴巴更大' },
-    { hira:'け', kata:'ケ', phonetic:'ㄎㄝ', hint:'柱子撐板子，穩穩站住', hintKata:'像け右半邊，一撇加一折' },
-    { hira:'こ', kata:'コ', phonetic:'ㄎㄛ', hint:'兩橫像缺口，轉過去', hintKata:'像こ拉直，方形缺了一邊' },
+    { hira:'か', kata:'カ', phonetic:'ㄎㄚ', hint:'右邊一撇一豎，像人伸出右手', hintKata:'一撇一豎像鐮刀，「喀」砍下去' },
+    { hira:'き', kata:'キ', phonetic:'ㄎ一', hint:'有兩根鬍鬚的鑰匙', hintKata:'三橫一豎像梳子，梳子「ki」' },
+    { hira:'く', kata:'ク', phonetic:'ㄎㄨ', hint:'鳥嘴張開大叫', hintKata:'一撇彎下來像鳥嘴，「ku」叫' },
+    { hira:'け', kata:'ケ', phonetic:'ㄎㄝ', hint:'柱子撐板子，穩穩站住', hintKata:'一橫加撇再折，像掛鉤「喀」掛住' },
+    { hira:'こ', kata:'コ', phonetic:'ㄎㄛ', hint:'兩橫像缺口，轉過去', hintKata:'兩橫像梯子的兩格，「ko」爬上去' },
   ]},
   { label: 'さ行', rowPhonetic: 'ㄙ', items: [
-    { hira:'さ', kata:'サ', phonetic:'ㄙㄚ', hint:'十字加一撇，「颯」地出現', hintKata:'像さ上半部，兩橫加一撇' },
-    { hira:'し', kata:'シ', phonetic:'ㄒ一', hint:'釣魚竿彎下，靜靜等魚', hintKata:'像し躺平，三點朝右' },
-    { hira:'す', kata:'ス', phonetic:'ㄙㄨ', hint:'小尾巴旋轉，漩渦捲走', hintKata:'像す簡化，一撇加一折' },
-    { hira:'せ', kata:'セ', phonetic:'ㄙㄝ', hint:'右上有個小鉤', hintKata:'像せ右邊，兩橫加右鉤' },
-    { hira:'そ', kata:'ソ', phonetic:'ㄙㄛ', hint:'波浪形，扭來扭去', hintKata:'像そ上半部，兩撇往右' },
+    { hira:'さ', kata:'サ', phonetic:'ㄙㄚ', hint:'十字加一撇，「颯」地出現', hintKata:'三橫加一撇像叉子，「颯」叉下去' },
+    { hira:'し', kata:'シ', phonetic:'ㄒ一', hint:'釣魚竿彎下，靜靜等魚', hintKata:'三點往右像水滴，「嘶」滴下來' },
+    { hira:'す', kata:'ス', phonetic:'ㄙㄨ', hint:'小尾巴旋轉，漩渦捲走', hintKata:'一撇往下彎像湯匙，「嗖」一挖' },
+    { hira:'せ', kata:'セ', phonetic:'ㄙㄝ', hint:'右上有個小鉤', hintKata:'一橫往右再折，像問號「se」' },
+    { hira:'そ', kata:'ソ', phonetic:'ㄙㄛ', hint:'波浪形，扭來扭去', hintKata:'兩撇往右像兩道水，「嗖」流走' },
   ]},
   { label: 'た行', rowPhonetic: 'ㄊ', items: [
-    { hira:'た', kata:'タ', phonetic:'ㄊㄚ', hint:'十字加腿，踏步走路', hintKata:'像た右半邊，一橫加兩撇' },
-    { hira:'ち', kata:'チ', phonetic:'ㄑ一', hint:'捲起的小蟲，「吱吱」叫', hintKata:'像ち拉直，三橫加一撇' },
-    { hira:'つ', kata:'ツ', phonetic:'ㄘㄨ', hint:'嘴角右彎，微笑嘴形', hintKata:'像つ躺平，三點加一彎' },
-    { hira:'て', kata:'テ', phonetic:'ㄊㄝ', hint:'丁字形掛衣架', hintKata:'像て簡化，三橫整齊排列' },
-    { hira:'と', kata:'ト', phonetic:'ㄊㄛ', hint:'柱子旁冒出彎角', hintKata:'像と只留右半，一豎加一彎' },
+    { hira:'た', kata:'タ', phonetic:'ㄊㄚ', hint:'十字加腿，踏步走路', hintKata:'一橫加兩撇像星星，「踏」一步' },
+    { hira:'ち', kata:'チ', phonetic:'ㄑ一', hint:'捲起的小蟲，「吱吱」叫', hintKata:'三橫加一撇像梳子倒放，「吱」' },
+    { hira:'つ', kata:'ツ', phonetic:'ㄘㄨ', hint:'嘴角右彎，微笑嘴形', hintKata:'三點往右像水花濺出，「嘿嘿」' },
+    { hira:'て', kata:'テ', phonetic:'ㄊㄝ', hint:'丁字形掛衣架', hintKata:'一橫加豎再一橫，丁字「te」' },
+    { hira:'と', kata:'ト', phonetic:'ㄊㄛ', hint:'柱子旁冒出彎角', hintKata:'一豎加一短撇，像釘子「咚」釘進去' },
   ]},
   { label: 'な行', rowPhonetic: 'ㄋ', items: [
-    { hira:'な', kata:'ナ', phonetic:'ㄋㄚ', hint:'伸手加一撇，「拿」東西', hintKata:'像な上半部，一橫加一撇' },
-    { hira:'に', kata:'ニ', phonetic:'ㄋ一', hint:'兩橫一豎，梯子第二格「二」', hintKata:'像に只留兩橫，整齊疊著' },
-    { hira:'ぬ', kata:'ヌ', phonetic:'ㄋㄨ', hint:'繞圈筆畫像一碗麵', hintKata:'像ぬ拉直，一橫加一撇折' },
-    { hira:'ね', kata:'ネ', phonetic:'ㄋㄝ', hint:'有捲圈的貓尾巴，「呢～」', hintKata:'像ね上半部，木字形' },
-    { hira:'の', kata:'ノ', phonetic:'ㄋㄛ', hint:'整個字是圓圈，甜甜圈', hintKata:'像の拉直，只剩一大撇' },
+    { hira:'な', kata:'ナ', phonetic:'ㄋㄚ', hint:'伸手加一撇，「拿」東西', hintKata:'一橫加一撇像十字，「拿」東西' },
+    { hira:'に', kata:'ニ', phonetic:'ㄋ一', hint:'兩橫一豎，梯子第二格「二」', hintKata:'兩橫整齊疊著，「二」就是「ㄋ一」' },
+    { hira:'ぬ', kata:'ヌ', phonetic:'ㄋㄨ', hint:'繞圈筆畫像一碗麵', hintKata:'一橫加一撇折，像叉子攪麵「ㄋㄨ」' },
+    { hira:'ね', kata:'ネ', phonetic:'ㄋㄝ', hint:'有捲圈的貓尾巴，「呢～」', hintKata:'像一棵樹的形狀，樹「ㄋㄝ」' },
+    { hira:'の', kata:'ノ', phonetic:'ㄋㄛ', hint:'整個字是圓圈，甜甜圈', hintKata:'一大撇向右下，像斜坡溜下「ㄋㄛ」' },
   ]},
   { label: 'は行', rowPhonetic: 'ㄏ', items: [
-    { hira:'は', kata:'ハ', phonetic:'ㄏㄚ', hint:'三根柱子，三人「哈哈」笑', hintKata:'像は右半邊，兩撇往外開' },
-    { hira:'ひ', kata:'ヒ', phonetic:'ㄏ一', hint:'太陽壓扁拉長', hintKata:'像ひ拉直，一橫加右折' },
-    { hira:'ふ', kata:'フ', phonetic:'ㄈㄨ', hint:'四撇蓬蓬的，吹「呼～」飛走', hintKata:'像ふ上半部，一橫往右彎下' },
-    { hira:'へ', kata:'ヘ', phonetic:'ㄏㄝ', hint:'山形輪廓，爬山喘「嘿」', hintKata:'跟へ幾乎一模一樣，像小山' },
-    { hira:'ほ', kata:'ホ', phonetic:'ㄏㄛ', hint:'十字加兩撇，像一棵樹', hintKata:'像ほ簡化，十字加兩撇' },
+    { hira:'は', kata:'ハ', phonetic:'ㄏㄚ', hint:'三根柱子，三人「哈哈」笑', hintKata:'兩撇往外開，像兩腳站立「哈哈」' },
+    { hira:'ひ', kata:'ヒ', phonetic:'ㄏ一', hint:'太陽壓扁拉長', hintKata:'一橫往右折，像一把椅子，坐著「嘿」' },
+    { hira:'ふ', kata:'フ', phonetic:'ㄈㄨ', hint:'四撇蓬蓬的，吹「呼～」飛走', hintKata:'一橫往右彎下，像鉤子吹「呼」' },
+    { hira:'へ', kata:'ヘ', phonetic:'ㄏㄝ', hint:'山形輪廓，爬山喘「嘿」', hintKata:'一個山形，像小山「嘿」爬上去' },
+    { hira:'ほ', kata:'ホ', phonetic:'ㄏㄛ', hint:'十字加兩撇，像一棵樹', hintKata:'一豎加三橫，像十字路口「ho」' },
   ]},
   { label: 'ま行', rowPhonetic: 'ㄇ', items: [
-    { hira:'ま', kata:'マ', phonetic:'ㄇㄚ', hint:'兩橫加圓臉，媽媽的臉', hintKata:'像ま上半部，兩橫加一撇' },
-    { hira:'み', kata:'ミ', phonetic:'ㄇ一', hint:'三條波浪，水面波紋', hintKata:'像み拉直，三橫整齊排' },
-    { hira:'む', kata:'ム', phonetic:'ㄇㄨ', hint:'彎角和尾巴，牛扭頭「哞～」', hintKata:'像む上半部，一撇加一折' },
-    { hira:'め', kata:'メ', phonetic:'ㄇㄝ', hint:'右邊大圓圈，眼睛的形狀', hintKata:'像め去掉圓圈，剩下交叉' },
-    { hira:'も', kata:'モ', phonetic:'ㄇㄛ', hint:'三橫加魚鉤，毛毛蟲吊著', hintKata:'像も拉直，三橫一豎' },
+    { hira:'ま', kata:'マ', phonetic:'ㄇㄚ', hint:'兩橫加圓臉，媽媽的臉', hintKata:'一橫往右折再撇，像釣魚竿釣到「媽」' },
+    { hira:'み', kata:'ミ', phonetic:'ㄇ一', hint:'三條波浪，水面波紋', hintKata:'三橫整齊，像三條線「mi」' },
+    { hira:'む', kata:'ム', phonetic:'ㄇㄨ', hint:'彎角和尾巴，牛扭頭「哞～」', hintKata:'像一個倒三角，牛角「哞」' },
+    { hira:'め', kata:'メ', phonetic:'ㄇㄝ', hint:'右邊大圓圈，眼睛的形狀', hintKata:'一撇加一叉，像打叉「me」沒有' },
+    { hira:'も', kata:'モ', phonetic:'ㄇㄛ', hint:'三橫加魚鉤，毛毛蟲吊著', hintKata:'三橫加一豎，像梳子「mo」梳頭' },
   ]},
   { label: 'や行', rowPhonetic: '一ㄚ', items: [
-    { hira:'や', kata:'ヤ', phonetic:'一ㄚ', hint:'叉腰大喊「呀！」', hintKata:'像や右半邊，一橫加兩撇' },
-    { hira:'ゆ', kata:'ユ', phonetic:'一ㄨ', hint:'右邊封閉圓，魚在游泳', hintKata:'像ゆ簡化，一橫加兩豎' },
-    { hira:'よ', kata:'ヨ', phonetic:'一ㄛ', hint:'三橫少左邊，缺一筆「唷」', hintKata:'像よ拉直，三橫整齊往右' },
+    { hira:'や', kata:'ヤ', phonetic:'一ㄚ', hint:'叉腰大喊「呀！」', hintKata:'一橫加兩撇像叉腰，「呀！」' },
+    { hira:'ゆ', kata:'ユ', phonetic:'一ㄨ', hint:'右邊封閉圓，魚在游泳', hintKata:'一橫加兩豎像叉子，「游」泳姿勢' },
+    { hira:'よ', kata:'ヨ', phonetic:'一ㄛ', hint:'三橫少左邊，缺一筆「唷」', hintKata:'三橫往右像梯子側面，「唷～」' },
   ]},
   { label: 'ら行', rowPhonetic: 'ㄌ', items: [
-    { hira:'ら', kata:'ラ', phonetic:'ㄌㄚ', hint:'音符形狀，唱歌的音符', hintKata:'像ら上半部，一橫加一撇' },
-    { hira:'り', kata:'リ', phonetic:'ㄌ一', hint:'兩條垂線，兩條辮子「哩哩」', hintKata:'跟り很像，兩豎筆直下來' },
-    { hira:'る', kata:'ル', phonetic:'ㄌㄨ', hint:'下有圓圈，路繞一圈回來', hintKata:'像る去掉圓圈，一撇加一折' },
-    { hira:'れ', kata:'レ', phonetic:'ㄌㄝ', hint:'右下彎鉤，打勾「了！」', hintKata:'像れ只留左邊，一大折角' },
-    { hira:'ろ', kata:'ロ', phonetic:'ㄌㄛ', hint:'口字少底，開口說「囉～」', hintKata:'像ろ拉直，變成完整方框' },
+    { hira:'ら', kata:'ラ', phonetic:'ㄌㄚ', hint:'音符形狀，唱歌的音符', hintKata:'一橫加一撇，像音符「La」' },
+    { hira:'り', kata:'リ', phonetic:'ㄌ一', hint:'兩條垂線，兩條辮子「哩哩」', hintKata:'兩豎筆直向下，像雨滴「哩」落下' },
+    { hira:'る', kata:'ル', phonetic:'ㄌㄨ', hint:'下有圓圈，路繞一圈回來', hintKata:'一撇往下折，像小路彎彎「路」' },
+    { hira:'れ', kata:'レ', phonetic:'ㄌㄝ', hint:'右下彎鉤，打勾「了！」', hintKata:'一大折角，像打勾「了！」' },
+    { hira:'ろ', kata:'ロ', phonetic:'ㄌㄛ', hint:'口字少底，開口說「囉～」', hintKata:'四方形像方框，開口說「囉」' },
   ]},
   { label: 'わ行', rowPhonetic: 'ㄨ', items: [
-    { hira:'わ', kata:'ワ', phonetic:'ㄨㄚ', hint:'開口形狀，「哇！」驚嘆', hintKata:'像わ去掉左撇，開口更大' },
-    { hira:'を', kata:'ヲ', phonetic:'ㄛ',   hint:'一橫加轉圈，轉呼拉圈「喔」', hintKata:'像を拉直，三橫加一撇折' },
+    { hira:'わ', kata:'ワ', phonetic:'ㄨㄚ', hint:'開口形狀，「哇！」驚嘆', hintKata:'一橫往右下弧，像微笑「哇！」' },
+    { hira:'を', kata:'ヲ', phonetic:'ㄛ',   hint:'一橫加轉圈，轉呼拉圈「喔」', hintKata:'三橫加一撇折，「喔」念起來嘴形' },
   ]},
   { label: 'ん', rowPhonetic: 'ㄣ', items: [
-    { hira:'ん', kata:'ン', phonetic:'ㄣ',   hint:'收尾彎鉤，放字尾「嗯～」', hintKata:'像ん躺平，兩撇加一豎' },
+    { hira:'ん', kata:'ン', phonetic:'ㄣ',   hint:'收尾彎鉤，放字尾「嗯～」', hintKata:'一撇加一豎，像問號的尾巴「嗯」' },
   ]},
 ];
 
@@ -1016,29 +1004,58 @@ function switchMode(m) {
   document.getElementById('screen-' + m).classList.add('active');
   const idx = ['browse','quiz'].indexOf(m);
   document.querySelectorAll('.mode-tab')[idx].classList.add('active');
+  // 只在學習模式顯示 fab
+  document.getElementById('view-toggle-btn').style.display = m === 'browse' ? 'block' : 'none';
 }
 
 // ===== TTS =====
 // 這些字 TTS 念太短，加拖音讓它撐更久
-const STRETCH = {
-  'を':'おーー', 'ん':'んーー',
-};
 const LONG_GAP = new Set(['を','ん']);
+let speakToken = 0;
 function speak(text) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
-  const tts = STRETCH[text] || text;
-  const gap = LONG_GAP.has(text) ? 1600 : 800;
-  const u1 = new SpeechSynthesisUtterance(tts);
-  u1.lang = 'ja-JP'; u1.rate = 0.3; u1.pitch = 1.05;
-  window.speechSynthesis.speak(u1);
-  u1.onend = () => {
-    setTimeout(() => {
-      const u2 = new SpeechSynthesisUtterance(tts);
-      u2.lang = 'ja-JP'; u2.rate = 0.3; u2.pitch = 1.05;
-      window.speechSynthesis.speak(u2);
-    }, gap);
-  };
+  try {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    speakToken++;
+    const token = speakToken;
+    const gap = LONG_GAP.has(text) ? 1600 : 800;
+    const u1 = new SpeechSynthesisUtterance(text);
+    u1.lang = 'ja-JP'; u1.rate = 0.3; u1.pitch = 1.05;
+    window.speechSynthesis.speak(u1);
+    u1.onend = () => {
+      try {
+        setTimeout(() => {
+          try {
+            if (speakToken !== token) return; // 已被取消
+            const u2 = new SpeechSynthesisUtterance(text);
+            u2.lang = 'ja-JP'; u2.rate = 0.3; u2.pitch = 1.05;
+            window.speechSynthesis.speak(u2);
+          } catch(e) {}
+        }, gap);
+      } catch(e) {}
+    };
+  } catch(e) {}
+}
+
+
+// ===== 大卡片模式 =====
+let bigViewOn = false;
+
+function toggleView() {
+  bigViewOn = !bigViewOn;
+  const btn = document.getElementById('view-toggle-btn');
+  btn.classList.toggle('active', bigViewOn);
+  btn.innerHTML = bigViewOn ? `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <line x1="22" y1="6" x2="16" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="16,8 16,12 20,12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="6" y1="22" x2="12" y2="16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="8,16 12,16 12,20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>` : `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <line x1="7" y1="21" x2="21" y2="7" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="14,7 21,7 21,14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="14,21 7,21 7,14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+  renderBrowse();
 }
 
 // ===== BROWSE =====
@@ -1046,6 +1063,35 @@ function renderBrowse() {
   const showHint = document.getElementById('hint-check').checked;
   const key = currentKana === 'hira' ? 'hira' : 'kata';
   const hintKey = currentKana === 'hira' ? 'hint' : 'hintKata';
+
+  if (bigViewOn) {
+    document.getElementById('browse-grid').innerHTML = ROWS.map(row => {
+      const labelHtml = row.rowPhonetic
+        ? `${row.label} <span class="row-label-phonetic">（${row.rowPhonetic}）</span>`
+        : row.label;
+      return `
+      <div>
+        <div class="row-label">${labelHtml}</div>
+        <div class="big-kana-row">
+          ${row.items.map(item => `
+            <div class="big-kana-card tap-card"
+              data-char="${item[key]}"
+              data-hira="${item.hira}"
+              data-phonetic="${item.phonetic}"
+              data-hint="${item[hintKey].replace(/"/g,'&quot;')}">
+              <span class="kana-star">${getStars(item.hira)}</span>
+              <span class="big-kana-char">${item[key]}</span>
+              <div class="big-kana-phonetic${showHint ? '' : ' hidden'}">${item.phonetic}</div>
+              <div class="big-kana-hint${showHint ? '' : ' hidden'}">${item[hintKey]}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+    }).join('');
+    attachCardTaps();
+    return;
+  }
+
   document.getElementById('browse-grid').innerHTML = ROWS.map(row => {
     const labelHtml = row.rowPhonetic
       ? `${row.label} <span class="row-label-phonetic">（${row.rowPhonetic}）</span>`
@@ -1074,31 +1120,11 @@ function renderBrowse() {
   attachCardTaps();
 }
 
-let lastTap = 0;
-let lastTapEl = null;
-let pressTimer = null;
-
 function attachCardTaps() {
   document.querySelectorAll('.tap-card').forEach(el => {
-    // 長按（500ms）→ 放大
-    el.addEventListener('pointerdown', function(e) {
-      pressTimer = setTimeout(() => {
-        openCard(this.dataset.char, this.dataset.phonetic, this.dataset.hint, this.dataset.hira);
-        pressTimer = null;
-      }, 500);
+    el.addEventListener('click', function() {
+      browsePlay(this, this.dataset.char);
     });
-    el.addEventListener('pointerup', function() {
-      if (pressTimer) {
-        clearTimeout(pressTimer);
-        pressTimer = null;
-        // 短按 → 播放
-        browsePlay(this, this.dataset.char);
-      }
-    });
-    el.addEventListener('pointerleave', function() {
-      if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
-    });
-    el.addEventListener('contextmenu', e => e.preventDefault());
   });
 }
 
@@ -1109,20 +1135,6 @@ function browsePlay(el, char) {
   setTimeout(() => el.classList.remove('playing'), 600);
 }
 
-// ===== CARD MODAL =====
-function openCard(char, phonetic, hint, hira) {
-  speak(char);
-  document.getElementById('card-modal-char').textContent = char;
-  document.getElementById('card-modal-phonetic').textContent = phonetic;
-  document.getElementById('card-modal-hint').textContent = hint;
-  document.getElementById('card-modal').classList.add('show');
-}
-document.addEventListener('click', e => {
-  const modal = document.getElementById('card-modal');
-  if (modal.classList.contains('show') && !document.getElementById('card-modal-inner').contains(e.target)) {
-    modal.classList.remove('show');
-  }
-});
 
 // ===== ROW SELECTORS =====
 function renderRowSelectors() {
@@ -1348,9 +1360,15 @@ document.addEventListener('selectstart', e => e.preventDefault());
 document.addEventListener('copy', e => e.preventDefault());
 
 // INIT
-renderBrowse();
-renderRowSelectors();
-updateCoinDisplay();
+try {
+  renderBrowse();
+  renderRowSelectors();
+  updateCoinDisplay();
+  const fab = document.getElementById('view-toggle-btn');
+  if (fab) fab.style.display = 'block';
+} catch(e) {
+  console.error('INIT error:', e);
+}
 
 // 阿涵的隨機問候語
 const GREETINGS = [
