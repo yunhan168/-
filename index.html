@@ -94,11 +94,11 @@ box-shadow: 0 4px 16px var(–main-shadow);
 transition: all 0.15s; width: 100%; max-width: 420px;
 }
 .yt-btn:active { transform: scale(0.97); }
-.kana-switch { display: flex; gap: 6px; }
+.kana-switch { display: flex; gap: 10px; }
 .kana-btn {
-padding: 8px 12px; border-radius: 50px;
+padding: 11px 18px; border-radius: 50px;
 border: 2px solid rgba(255,255,255,0.7);
-font-size: 15px; font-weight: 900; cursor: pointer;
+font-size: 17px; font-weight: 900; cursor: pointer;
 background: rgba(255,255,255,0.15); color: white;
 font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 transition: all 0.2s;
@@ -165,8 +165,8 @@ font-size: 18px; font-weight: 900; color: #B5735A;
 letter-spacing: 0; font-style: normal;
 }
 .browse-tip {
-font-size: 17px; color: #A88878; font-weight: 700;
-margin-bottom: 14px; padding-left: 2px;
+font-size: 14px; color: #A88878; font-weight: 700;
+margin-top: 4px; padding-left: 2px;
 }
 .kana-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
 
@@ -831,7 +831,7 @@ body.kata .big-kana-card { -webkit-tap-highlight-color: transparent; }
       <div class="header-greeting" id="header-greeting"></div>
     </div>
   </div>
-  <div style="display:flex;align-items:center;gap:8px">
+  <div style="display:flex;align-items:center;gap:12px">
     <button class="coin-badge" id="coin-badge" onclick="openCoinModal()">💰 <span id="coin-count">0</span></button>
     <div class="kana-switch">
       <button class="kana-btn active" id="btn-hira" onclick="switchKana('hira')">平</button>
@@ -849,13 +849,15 @@ body.kata .big-kana-card { -webkit-tap-highlight-color: transparent; }
 
 <div class="screen active" id="screen-browse">
   <div class="browse-topbar">
-    <h2 id="browse-title">平假名一覽</h2>
+    <div>
+      <h2 id="browse-title">平假名一覽</h2>
+      <div class="browse-tip">💡 點一下播放發音</div>
+    </div>
     <label class="pill-toggle">
       <input type="checkbox" id="hint-check" checked onchange="renderBrowse()">
       記憶提示
     </label>
   </div>
-  <div class="browse-tip">💡 點一下播放發音</div>
   <div id="browse-grid"></div>
 </div>
 
@@ -1176,7 +1178,7 @@ function launchConfetti(originX, originY) {
     el.style.animationDelay = (Math.random() * 0.1) + 's';
     el.style.setProperty('--tx', (Math.cos(angle) * dist) + 'px');
     el.style.setProperty('--ty', (Math.sin(angle) * dist - 20) + 'px');
-    document.body.appendChild(el);
+    document.documentElement.appendChild(el);
     el.addEventListener('animationend', () => el.remove());
   }
 }
