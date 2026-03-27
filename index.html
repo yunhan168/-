@@ -635,7 +635,6 @@ body.kata .coin-modal-close { background: #5A8EB5; }
 .confetti-piece {
 position: fixed; pointer-events: none; z-index: 9999;
 border-radius: 3px;
-animation: confettiFall ease-out forwards;
 will-change: transform;
 }
 @keyframes confettiFall {
@@ -1182,8 +1181,9 @@ function launchConfetti(originX, originY) {
     el.style.height = h + 'px';
     el.style.background = colors[Math.floor(Math.random() * colors.length)];
     el.style.borderRadius = Math.random() > 0.5 ? '50%' : '3px';
-    el.style.animationDuration = (0.8 + Math.random() * 0.7) + 's';
-    el.style.animationDelay = (Math.random() * 0.1) + 's';
+    const dur = (0.8 + Math.random() * 0.7).toFixed(2);
+    el.style.animation = 'confettiFall ' + dur + 's ease-out forwards';
+    el.style.animationDelay = (Math.random() * 0.1).toFixed(2) + 's';
     const tx = Math.cos(angle) * dist;
     const ty = Math.sin(angle) * dist - 20;
     el.style.setProperty('--tx', tx + 'px');
