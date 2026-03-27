@@ -53,6 +53,7 @@ body {
 -webkit-tap-highlight-color: transparent !important;
 font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, ‘PingFang TC’, sans-serif;
 -webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
 background: #FDF5F2;
 color: #3A2820;
 min-height: 100vh;
@@ -139,8 +140,8 @@ font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 
 /* ===== BROWSE ===== */
 .browse-topbar {
-display: flex; align-items: center; justify-content: space-between;
-margin-bottom: 16px; flex-wrap: wrap; gap: 10px;
+display: flex; align-items: flex-start; justify-content: space-between;
+margin-bottom: 10px; flex-wrap: wrap; gap: 10px;
 }
 .browse-topbar h2 { font-size: 30px; font-weight: 900; }
 
@@ -167,7 +168,7 @@ letter-spacing: 0; font-style: normal;
 }
 .browse-tip {
 font-size: 14px; color: #A88878; font-weight: 700;
-margin-top: 4px; padding-left: 2px;
+margin-top: 2px; margin-bottom: 0; padding-left: 2px;
 }
 .kana-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
 
@@ -203,6 +204,7 @@ border-color: #EDD6CC;
 
 .kana-char {
 font-family: ‘Hiragino Rounded Gothic ProN W9’, ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 900;
+-webkit-text-stroke: 0.5px currentColor;
 font-size: 50px; line-height: 1.1; display: block;
 position: relative; z-index: 1;
 transition: font-size 0.2s;
@@ -631,9 +633,10 @@ body.kata .coin-modal-close { background: #5A8EB5; }
 
 /* ===== 撒彩帶 ===== */
 .confetti-piece {
-position: fixed; pointer-events: none; z-index: 600;
+position: fixed; pointer-events: none; z-index: 9999;
 border-radius: 3px;
 animation: confettiFall ease-out forwards;
+will-change: transform;
 }
 @keyframes confettiFall {
 0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
@@ -713,7 +716,8 @@ transition: all 0.15s;
 
 .big-kana-char {
 font-family: ‘Hiragino Rounded Gothic ProN W9’, ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif;
-font-size: 80px; font-weight: 900; line-height: 1; display: block; margin-bottom: 8px;
+font-size: 80px; font-weight: 900;
+-webkit-text-stroke: 0.8px currentColor; line-height: 1; display: block; margin-bottom: 8px;
 }
 .big-kana-phonetic {
 font-size: 36px; font-weight: 900; color: #B5735A; margin-top: 4px; margin-bottom: 12px;
@@ -1179,7 +1183,7 @@ function launchConfetti(originX, originY) {
     el.style.animationDelay = (Math.random() * 0.1) + 's';
     el.style.setProperty('--tx', (Math.cos(angle) * dist) + 'px');
     el.style.setProperty('--ty', (Math.sin(angle) * dist - 20) + 'px');
-    document.documentElement.appendChild(el);
+    document.body.appendChild(el);
     el.addEventListener('animationend', () => el.remove());
   }
 }
