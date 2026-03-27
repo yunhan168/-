@@ -1165,6 +1165,7 @@ function closeCoinModal() {
 }
 
 function launchConfetti(originX, originY) {
+  try {
   const colors = ['#FF6348','#FFA502','#2ED573','#FF4D94','#1E90FF'];
   const ox = originX || window.innerWidth / 2;
   const oy = originY || window.innerHeight / 2;
@@ -1189,6 +1190,13 @@ function launchConfetti(originX, originY) {
     el.style.setProperty('--ty', ty + 'px');
     document.body.appendChild(el);
     el.addEventListener('animationend', () => el.remove());
+  }
+  } catch(err) {
+    const d = document.createElement('div');
+    d.style.cssText = 'position:fixed;top:60px;left:0;right:0;background:red;color:white;padding:10px;font-size:13px;z-index:99999;';
+    d.textContent = 'confetti error: ' + err.message;
+    document.body.appendChild(d);
+    setTimeout(() => d.remove(), 4000);
   }
 }
 
