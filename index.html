@@ -635,10 +635,8 @@ body.kata .coin-modal-close { background: #5A8EB5; }
 .confetti-piece {
 position: fixed; pointer-events: none; z-index: 9999;
 border-radius: 3px;
-will-change: transform;
 }
-@keyframes confettiFall {
-0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
+
 100% { transform: translate(var(–tx), var(–ty)) rotate(720deg) scale(0.3); opacity: 0; }
 }
 20%  { transform: translate(calc(var(–tx)*0.3), calc(var(–ty)*0.1 - 30px)) rotate(200deg) scale(1.15); opacity: 1; }
@@ -1181,15 +1179,16 @@ function launchConfetti(originX, originY) {
     el.style.height = h + 'px';
     el.style.background = colors[Math.floor(Math.random() * colors.length)];
     el.style.borderRadius = Math.random() > 0.5 ? '50%' : '3px';
-    const dur = (0.8 + Math.random() * 0.7).toFixed(2);
-    el.style.animation = 'confettiFall ' + dur + 's ease-out forwards';
-    el.style.animationDelay = (Math.random() * 0.1).toFixed(2) + 's';
     const tx = Math.cos(angle) * dist;
     const ty = Math.sin(angle) * dist - 20;
-    el.style.setProperty('--tx', tx + 'px');
-    el.style.setProperty('--ty', ty + 'px');
+    const dur = 800 + Math.random() * 700;
+    const delay = Math.random() * 100;
     document.body.appendChild(el);
-    el.addEventListener('animationend', () => el.remove());
+    const anim = el.animate([
+      { transform: 'translate(0,0) rotate(0deg) scale(1)', opacity: 1 },
+      { transform: 'translate(' + tx + 'px,' + ty + 'px) rotate(720deg) scale(0.3)', opacity: 0 }
+    ], { duration: dur, delay: delay, easing: 'ease-out', fill: 'forwards' });
+    anim.onfinish = () => el.remove();
   }
   } catch(err) {
     const d = document.createElement('div');
