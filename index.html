@@ -141,7 +141,7 @@ font-family: ‘Hiragino Sans’, ‘Microsoft JhengHei’, sans-serif;
 /* ===== BROWSE ===== */
 .browse-topbar {
 display: flex; align-items: flex-start; justify-content: space-between;
-margin-bottom: 10px; flex-wrap: wrap; gap: 10px;
+margin-bottom: 8px; flex-wrap: wrap; gap: 10px;
 }
 .browse-topbar h2 { font-size: 30px; font-weight: 900; }
 
@@ -168,7 +168,7 @@ letter-spacing: 0; font-style: normal;
 }
 .browse-tip {
 font-size: 14px; color: #A88878; font-weight: 700;
-margin-top: 2px; margin-bottom: 0; padding-left: 2px;
+margin-top: 0; margin-bottom: 0; padding-left: 2px; line-height: 1.4;
 }
 .kana-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
 
@@ -204,7 +204,7 @@ border-color: #EDD6CC;
 
 .kana-char {
 font-family: ‘Hiragino Rounded Gothic ProN W9’, ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif; font-weight: 900;
--webkit-text-stroke: 0.5px currentColor;
+-webkit-text-stroke: 1px currentColor;
 font-size: 50px; line-height: 1.1; display: block;
 position: relative; z-index: 1;
 transition: font-size 0.2s;
@@ -640,6 +640,8 @@ will-change: transform;
 }
 @keyframes confettiFall {
 0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
+100% { transform: translate(var(–tx), var(–ty)) rotate(720deg) scale(0.3); opacity: 0; }
+}
 20%  { transform: translate(calc(var(–tx)*0.3), calc(var(–ty)*0.1 - 30px)) rotate(200deg) scale(1.15); opacity: 1; }
 70%  { opacity: 1; }
 100% { transform: translate(var(–tx), var(–ty)) rotate(700deg) scale(0.4); opacity: 0; }
@@ -717,7 +719,7 @@ transition: all 0.15s;
 .big-kana-char {
 font-family: ‘Hiragino Rounded Gothic ProN W9’, ‘Hiragino Rounded Gothic ProN W7’, ‘Hiragino MaruGothic ProN’, ‘Hiragino Sans’, ‘Yu Gothic’, sans-serif;
 font-size: 80px; font-weight: 900;
--webkit-text-stroke: 0.8px currentColor; line-height: 1; display: block; margin-bottom: 8px;
+-webkit-text-stroke: 1.2px currentColor; line-height: 1; display: block; margin-bottom: 8px;
 }
 .big-kana-phonetic {
 font-size: 36px; font-weight: 900; color: #B5735A; margin-top: 4px; margin-bottom: 12px;
@@ -1181,8 +1183,10 @@ function launchConfetti(originX, originY) {
     el.style.borderRadius = Math.random() > 0.5 ? '50%' : '3px';
     el.style.animationDuration = (0.8 + Math.random() * 0.7) + 's';
     el.style.animationDelay = (Math.random() * 0.1) + 's';
-    el.style.setProperty('--tx', (Math.cos(angle) * dist) + 'px');
-    el.style.setProperty('--ty', (Math.sin(angle) * dist - 20) + 'px');
+    const tx = Math.cos(angle) * dist;
+    const ty = Math.sin(angle) * dist - 20;
+    el.style.setProperty('--tx', tx + 'px');
+    el.style.setProperty('--ty', ty + 'px');
     document.body.appendChild(el);
     el.addEventListener('animationend', () => el.remove());
   }
