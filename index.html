@@ -631,12 +631,6 @@ box-shadow: 0 5px 0 rgba(0,0,0,0.10);
 body.kata .coin-modal-total { color: #5A8EB5; }
 body.kata .coin-modal-close { background: #5A8EB5; }
 
-/* ===== 撒彩帶 ===== */
-.confetti-piece {
-position: fixed; pointer-events: none; z-index: 9999;
-border-radius: 3px;
-}
-
 100% { transform: translate(var(–tx), var(–ty)) rotate(720deg) scale(0.3); opacity: 0; }
 }
 20%  { transform: translate(calc(var(–tx)*0.3), calc(var(–ty)*0.1 - 30px)) rotate(200deg) scale(1.15); opacity: 1; }
@@ -1161,44 +1155,6 @@ function closeCoinModal() {
   document.getElementById('coin-modal').classList.remove('show');
 }
 
-function launchConfetti(originX, originY) {
-  try {
-  const colors = ['#FF6348','#FFA502','#2ED573','#FF4D94','#1E90FF'];
-  const ox = originX || window.innerWidth / 2;
-  const oy = originY || window.innerHeight / 2;
-  for (let i = 0; i < 25; i++) {
-    const el = document.createElement('div');
-    el.className = 'confetti-piece';
-    const angle = (Math.random() * 360) * Math.PI / 180;
-    const dist = 100 + Math.random() * 120;
-    const w = 8 + Math.random() * 8;
-    const h = 8 + Math.random() * 8;
-    el.style.left = ox + 'px';
-    el.style.top = oy + 'px';
-    el.style.width = w + 'px';
-    el.style.height = h + 'px';
-    el.style.background = colors[Math.floor(Math.random() * colors.length)];
-    el.style.borderRadius = Math.random() > 0.5 ? '50%' : '3px';
-    const tx = Math.cos(angle) * dist;
-    const ty = Math.sin(angle) * dist - 20;
-    const dur = 800 + Math.random() * 700;
-    const delay = Math.random() * 100;
-    document.body.appendChild(el);
-    const anim = el.animate([
-      { transform: 'translate(0,0) rotate(0deg) scale(1)', opacity: 1 },
-      { transform: 'translate(' + tx + 'px,' + ty + 'px) rotate(720deg) scale(0.3)', opacity: 0 }
-    ], { duration: dur, delay: delay, easing: 'ease-out', fill: 'forwards' });
-    anim.onfinish = () => el.remove();
-  }
-  } catch(err) {
-    const d = document.createElement('div');
-    d.style.cssText = 'position:fixed;top:60px;left:0;right:0;background:red;color:white;padding:10px;font-size:13px;z-index:99999;';
-    d.textContent = 'confetti error: ' + err.message;
-    document.body.appendChild(d);
-    setTimeout(() => d.remove(), 4000);
-  }
-}
-
 // ===== 大卡片模式 =====
 let bigViewOn = false;
 
@@ -1470,7 +1426,6 @@ function answerQuiz(el, chosen, correct) {
     fb.className = 'quiz-feedback show-correct';
     earnCoin();
     const rect = el ? el.getBoundingClientRect() : null;
-    launchConfetti(rect ? rect.left + rect.width/2 : null, rect ? rect.top + rect.height/2 : null);
     setTimeout(() => { fb.className = 'quiz-feedback'; }, 1500);
   } else {
     el.classList.add('wrong');
