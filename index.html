@@ -838,6 +838,20 @@ body.kata .big-kana-card { -webkit-tap-highlight-color: transparent; }
   </div>
 </div>
 
+<div id="speech-debug" style="background:#333;color:white;padding:10px;font-size:13px;display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;word-break:break-all;"></div>
+<button onclick="
+  const d = document.getElementById('speech-debug');
+  d.style.display = 'block';
+  if (!window.speechSynthesis) { d.textContent = 'speechSynthesis NOT SUPPORTED'; return; }
+  const voices = window.speechSynthesis.getVoices();
+  d.textContent = 'voices: ' + voices.length + ' | ja voices: ' + voices.filter(v=>v.lang.includes('ja')).map(v=>v.name).join(',') + ' | pending: ' + window.speechSynthesis.pending + ' | speaking: ' + window.speechSynthesis.speaking;
+  const u = new SpeechSynthesisUtterance('あ');
+  u.lang = 'ja-JP'; u.rate = 0.5;
+  u.onstart = () => d.textContent += ' | STARTED';
+  u.onend = () => d.textContent += ' | ENDED';
+  u.onerror = (e) => d.textContent += ' | ERROR: ' + e.error;
+  window.speechSynthesis.speak(u);
+" style="position:fixed;bottom:80px;left:10px;z-index:9999;background:red;color:white;padding:10px;border:none;border-radius:8px;font-size:16px;">🔊 語音測試</button>
 <div class="mode-tabs">
   <button class="mode-tab active" onclick="switchMode('browse')">📖 學習</button>
   <button class="mode-tab" onclick="switchMode('quiz')">✏️ 小測驗</button>
