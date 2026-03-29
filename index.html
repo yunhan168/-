@@ -1106,12 +1106,8 @@ function switchMode(m) {
 // 這些字 TTS 念太短，加拖音讓它撐更久
 const LONG_GAP = new Set(['を','ん']);
 let speakToken = 0;
-function speak(text) {
+function doSpeak(text, token) {
   try {
-    if (!window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    speakToken++;
-    const token = speakToken;
     const gap = LONG_GAP.has(text) ? 1600 : 800;
     const u1 = new SpeechSynthesisUtterance(text);
     u1.lang = 'ja-JP'; u1.rate = 0.3; u1.pitch = 1.05;
@@ -1120,7 +1116,7 @@ function speak(text) {
       try {
         setTimeout(() => {
           try {
-            if (speakToken !== token) return; // 已被取消
+            if (speakToken !== token) return;
             const u2 = new SpeechSynthesisUtterance(text);
             u2.lang = 'ja-JP'; u2.rate = 0.3; u2.pitch = 1.05;
             window.speechSynthesis.speak(u2);
@@ -1128,6 +1124,33 @@ function speak(text) {
         }, gap);
       } catch(e) {}
     };
+  } catch(e) {}
+}
+
+function speak(text) {
+  try {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    speakToken++;
+    const token = speakToken;
+    // iPad Safari 需要等語音列表載入
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      doSpeak(text, token);
+    } else {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.onvoiceschanged = null;
+        if (speakToken !== token) return;
+        doSpeak(text, token);
+      };
+      // 若 onvoiceschanged 不觸發（部分 Safari），直接等 500ms 再試
+      setTimeout(() => {
+        if (speakToken !== token) return;
+        if (!window.speechSynthesis.speaking && !window.speechSynthesis.pending) {
+          doSpeak(text, token);
+        }
+      }, 500);
+    }
   } catch(e) {}
 }
 
@@ -1512,6 +1535,19 @@ function shuffle(arr) {
 // 阻擋長按選取和右鍵選單
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('copy', e => e.preventDefault());
+
+
+// iPad Safari 語音解鎖：第一次點擊時暖機
+let speechUnlocked = false;
+function unlockSpeech() {
+  if (speechUnlocked || !window.speechSynthesis) return;
+  speechUnlocked = true;
+  const u = new SpeechSynthesisUtterance('');
+  u.volume = 0;
+  window.speechSynthesis.speak(u);
+}
+document.addEventListener('touchstart', unlockSpeech, { once: true });
+document.addEventListener('click', unlockSpeech, { once: true });
 
 // INIT
 try {
